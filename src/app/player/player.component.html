@@ -15,7 +15,7 @@
     </ul>
   </div>
   <div class="song-player">
-    <audio #audioPlayer controls id="audioPlayer" (ended)="checkNextSong($event)">
+    <audio #audioPlayer id="audioPlayerElm" (ended)="checkNextSong($event)">
       <source id="audioPlayerMP3" type="audio/mpeg">
       <source id="audioPlayerOGG" type="audio/ogg">
       Your browser does not support the audio element. 

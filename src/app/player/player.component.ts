@@ -1,6 +1,13 @@
 import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { GlobalService } from '../shared/global-service.service';
 
+interface SongInfoData {
+  "title": string,
+  "artist": string,
+  "track-file": string,
+  "url": string
+}
+
 @Component({
   selector: 'app-player',
   templateUrl: './player.component.html',
@@ -10,7 +17,7 @@ export class PlayerComponent implements OnInit {
   @ViewChild('songControl') songControlRef: ElementRef;
   @ViewChild('audioPlayer') audioPlayerRef: ElementRef;
 
-  curSongInfo: Array<any> = [];
+  curSongInfo: SongInfoData = {} as SongInfoData;
   frameID: any;
   trackTitle: string;
   trackFile: string;
@@ -73,7 +80,6 @@ export class PlayerComponent implements OnInit {
 
   initPlayer() {
     this.generateProgress(0);  
-    // $('#previewAllLink').on('click', previewAllTracks);
   }
   
   navigateSong(e) {
@@ -85,7 +91,7 @@ export class PlayerComponent implements OnInit {
     this.globalService.songNavigated$.emit(dir);
   }
   
-  checkNextSong() {
+  checkNextSong(evt) {
     this.renderer.removeClass(this.playButton, 'playing');
     this.resetPlayer();
     if(this.globalService.curTrack < this.globalService.totalTrack) {
@@ -180,6 +186,6 @@ export class PlayerComponent implements OnInit {
       this.curSongInfo = this.globalService.songsInfo[val-1];
       return;
     } 
-    this.curSongInfo = [];
+    this.curSongInfo = {} as SongInfoData;
   }
 }
