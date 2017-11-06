@@ -1,27 +1,15 @@
 # MusicPlayer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
+This is a sample portfolio project written using Angular2, with Typescript and SCSS. All the components are written from scratch. I also use Google Material icons for additional aesthetic views (on top of, otherwise, text-only contents).
 
-## Development server
+##Concept
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Recently, I wanted to know how far have HTML5 and Javascript support multimedia contents since the days of Flash and Actionscript. For that, I decided to give it a try to build this simple web-based music player. I used SCSS and Angular2(+Typescript) to build this for ease of development.
 
-## Code scaffolding
+## Future references
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+I believe there is a lot more that can be done for faster, more efficient development (Eg., I do find the visualiser is taking up too much memory consumption). Other than that, I am satisfied for my first try, and impressed by how far has web standards improve.
 
-## Build
+## Feedbacks
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+I still have more to learn (such is life for a developer), so feel free to check my codes and drop me some comments at tendoujir@gmail.com.
