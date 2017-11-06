@@ -1,0 +1,46 @@
+{
+  "songs": [
+    { 
+      "title": "Piano Intro & Buildup (Remix)", 
+      "artist": "junkfood2121", 
+      "track-file": "track-01",
+      "url": "https://freesound.org/people/junkfood2121/sounds/405584/" 
+    },
+    { 
+      "title": "My Love", 
+      "artist": "ShadyDave", 
+      "track-file": "track-02",
+      "url": "https://freesound.org/people/ShadyDave/sounds/325611/" 
+    },
+    { 
+      "title": "Sample 130 BPM", 
+      "artist": "Greek555", 
+      "track-file": "track-03",
+      "url": "https://freesound.org/people/Greek555/sounds/401905/" 
+    },
+    { 
+      "title": "Vintage Elecro Pop", 
+      "artist": "frankum", 
+      "track-file": "track-04",
+      "url": "https://freesound.org/people/frankum/sounds/384468/" 
+    },
+    { 
+      "title": "Expressions Of The Mind", 
+      "artist": "ShadyDave", 
+      "track-file": "track-05",
+      "url": "https://freesound.org/people/ShadyDave/sounds/325647/" 
+    },
+    { 
+      "title": "On The Seas", 
+      "artist": "ShadyDave", 
+      "track-file": "track-06",
+      "url": "https://freesound.org/people/ShadyDave/sounds/325407/" 
+    },
+    { 
+      "title": "Road To Purple Sky", 
+      "artist": "Vagaar", 
+      "track-file": "track-07",
+      "url": "https://freesound.org/people/Vagaar/sounds/333149/" 
+    }
+  ]
+}

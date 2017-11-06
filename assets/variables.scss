@@ -1,0 +1,35 @@
+$black-color: #050505;
+$white-color: #efefff;
+$orange-color: #fdbc2f;
+$blue-color: #2f70fd;
+
+$light-shade: rgba(255,255,255,0.2);
+$lightest-shade: rgba(255,255,255,0.05);
+$dark-shade: rgba(0,0,0,0.2);
+
+$border-line: 1px solid $light-shade;
+
+$font-color: $white-color;
+$font-size-base: 14px;
+
+$padding-small: 5px;
+$padding-standard: 15px;
+$padding-large: 20px;
+
+$header-height: 50px;
+$bar-height: 40px;
+$gap-height: 15px;
+
+
+/****************************/
+/* Media layout             */
+/****************************/
+$xsmall-screen: 400px;
+$small-screen: 640px;
+$medium-screen: 800px;
+$large-screen: 1000px;
+
+$xsmall-screen-media: 'screen and (max-width: ' + $xsmall-screen + ')';
+$small-screen-media: 'screen and (max-width: ' + $small-screen + ')';
+$medium-screen-media: 'screen and (max-width: ' + $medium-screen + ')';
+$large-screen-media: 'screen and (max-width: ' + $large-screen + ')';
