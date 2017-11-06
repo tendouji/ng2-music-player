@@ -1,0 +1,45 @@
+<div class="player-component">
+  <div class="song-info">
+    <ul>
+      <li>
+        <span class="label">Artist:</span>
+        <span class="value">{{ curSongInfo.artist }}</span>
+      </li>
+      <li>
+        <span class="label">Title:</span>
+        <span class="value">{{ curSongInfo.title }}</span>
+      </li>
+      <li *ngIf="curSongInfo.url">
+        <a [href]="curSongInfo.url" target="_blank">Go to source <i class="material-icons">launch</i></a>
+      </li>
+    </ul>
+  </div>
+  <div class="song-player">
+    <audio #audioPlayer controls id="audioPlayer" (ended)="checkNextSong($event)">
+      <source id="audioPlayerMP3" type="audio/mpeg">
+      <source id="audioPlayerOGG" type="audio/ogg">
+      Your browser does not support the audio element. 
+    </audio>
+
+    <div #songControl class="song-control no-sound">
+      <a id="previousSong" class="track-nav disabled" href="#previous" (click)="navigateSong($event)">
+        <i class="material-icons">fast_rewind</i>
+      </a>
+      <a id="play" class="pie-wrapper" href="#playAudio" (click)="playAudio($event)">
+        <div class="pie-center">
+          <div class="pie-arrow">
+            <i class="play material-icons">play_arrow</i>            
+            <i class="pause material-icons">pause</i>            
+          </div>
+        </div>
+        <div class="pie">
+            <div class="left-side half-circle"></div>
+            <div class="right-side half-circle"></div>
+        </div>
+      </a>
+      <a id="nextSong" class="track-nav" href="#next" (click)="navigateSong($event)">
+        <i class="material-icons">fast_forward</i>
+      </a>
+    </div>
+  </div>
+</div>

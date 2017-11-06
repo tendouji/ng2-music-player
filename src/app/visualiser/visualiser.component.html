@@ -1,0 +1,7 @@
+<div class="visualiser-panel">
+  <div class="bar" 
+    *ngFor="let bar of frequencyData; let i = index" 
+    [style.width]="barWidth + '%'" 
+    [style.height]="bar + 'px'" 
+    [style.left]="(barWidth*i) + '%'"></div>
+</div>

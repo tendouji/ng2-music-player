@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'assets/variables.scss';
+@import 'assets/mixins.scss';
+
+html, body {
+  height: 100%;
+  width: 100%;
+
+  @media #{$medium-screen-media} {
+    height: auto;
+    min-height: 100%;
+  }
+}
+
+body {
+  margin: 0;
+  padding: ($header-height + $gap-height) 0 0 0;
+  box-sizing: border-box;
+  color: $font-color;
+  font-family: 'Saira Semi Condensed', sans-serif;
+  font-size: $font-size-base;
+  background-color: $black-color;
+
+  @media #{$medium-screen-media} {
+    padding: 0;
+  }
+}

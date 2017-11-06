@@ -1,0 +1,57 @@
+@mixin centered-aligned-container {
+  text-align: center;
+  font-size: 0;
+
+  &:before {
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    vertical-align: middle;
+    content: '';
+  }
+}
+
+@mixin centered-aligned-content {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: $font-size-base;
+}
+
+@mixin standard-panel {
+  border: 1px solid $light-shade;
+  padding: $padding-standard;
+  background-color: $color-white;
+}
+
+@mixin fit-full-screen {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+@mixin centered-icon {
+  & i.material-icons {
+    vertical-align: middle;
+  }
+}
+
+@mixin clear-bottom {
+  &:after {
+    display: table;
+    content: '';
+    clear: both;
+  }
+}
+
+@mixin list-blank {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@mixin text-clipped {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

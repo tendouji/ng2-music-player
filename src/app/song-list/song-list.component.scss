@@ -1,0 +1,178 @@
+@import '../../assets/variables.scss';
+@import '../../assets/mixins.scss';
+
+.playlist {
+  height: 100%;
+  border-left: #{$border-line};
+  background-color: $lightest-shade;
+  
+  @media #{$medium-screen-media} {
+    border-top: #{$border-line};
+    border-left: 0;
+  }
+  
+  & .title {
+    height: $bar-height;
+    border-bottom: #{$border-line};
+    
+    & .icon {
+      float: left;
+      width: $bar-height;
+      height: $bar-height;
+      border-right: #{$border-line};
+      line-height: $bar-height;
+      text-align: center;
+      color: $orange-color;
+      @include centered-icon;
+
+      & i.material-icons {
+        font-size: 2em;
+      }
+    }
+
+    & h2 {
+      float: left;
+      width: calc(100% - #{$bar-height} - 1px);
+      padding-left: $padding-small;      
+      margin: 0;
+      box-sizing: border-box;
+      line-height: $bar-height;
+      font-weight: 600;
+      font-size: 1.5em;
+    }
+  } 
+  
+  & .song-list {    
+    height: calc(100% - #{$bar-height} - 1px);
+    overflow-x: hidden;
+    overflow-y: auto;
+
+  & ol {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      font-weight: 400;
+      counter-reset: items;
+      
+      & li {
+        height: $bar-height;
+        
+        &.active {
+          font-weight: bold;
+
+          & a {
+            color: $white-color;
+          }
+        }
+
+        & a {
+          float: left;
+          display: block;
+          position: relative;
+          width: calc(100% - 160px);
+          padding: 0  $padding-standard 0 ($bar-height + $padding-small);
+          box-sizing: border-box;
+          line-height: $bar-height;
+          counter-increment: items;
+          text-decoration: none;
+          color: $light-shade;
+          @include text-clipped;
+
+          &:hover {
+            color: $white-color;
+          }
+          
+          &:after, 
+          &:before {
+            position: absolute;
+            content: '';
+          }
+          
+          &:before {
+            top: 5px;
+            left: $padding-small;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            color: $white-color;
+            text-align: center;
+            line-height: 30px;
+            content: "0" counter(items);
+          }
+          
+          &:after {
+            display: none;
+            top: 12px;
+            left: $padding-small + 11px;
+            height: 0;
+            width: 0;
+            border: 8px solid transparent;
+            border-left: 11px solid $white-color;
+          }
+        }
+
+        & .song-artist{
+          float: right;
+          display: block;
+          width: 100px;
+          margin-right: $padding-standard;
+          box-sizing: border-box;
+          line-height: $bar-height;
+          @include text-clipped;
+
+          & span {
+            padding: 1px 5px 1px 2px;
+            background: $lightest-shade;
+            border-radius: 3px;
+            @include centered-icon;
+
+            & i.material-icons {
+              margin-right: 3px;
+              color: $blue-color;
+              font-size: 1.2em;
+            }
+          }
+        }
+
+        & .song-duration{
+          float: right;
+          display: block;
+          width: 45px;
+          line-height: $bar-height;
+        }
+
+        &:nth-child(n+10) {
+          & a {
+            &:before {
+              content: counter(items);
+            }
+          }
+        }
+        
+        &:hover, 
+        &.active {
+          background-color: $lightest-shade;
+          
+          & a {
+            &:before {
+              background: $light-shade;
+              content: '';
+            }
+
+            &:after {
+              display: block;
+            }
+          }
+        }
+        
+        &.active {
+          & a {
+            &:after {
+              border-left: 11px solid $orange-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

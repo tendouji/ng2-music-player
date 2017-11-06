@@ -1,0 +1,14 @@
+@import '../../assets/variables.scss';
+@import '../../assets/mixins.scss';
+
+.visualiser-panel {
+  position: absolute;
+  @include fit-full-screen;
+
+  & .bar {
+    position: absolute;
+    bottom: 0;
+    width: calc(100% / 256);
+    background: $blue-color;
+  }
+}

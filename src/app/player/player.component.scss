@@ -1,0 +1,201 @@
+@import '../../assets/variables.scss';
+@import '../../assets/mixins.scss';
+
+$controlsHeight: 100px;
+$arrowHeight: 60px;
+$trackBarThickness: 8px;
+
+.player-component {
+  position: relative;
+  display: block;
+  text-align: center;
+  transition: all 200ms 300ms;
+  
+  & .song-info {
+    margin-bottom: $bar-height;
+    text-align: left;
+
+    & ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      & li {
+        display: block;
+        padding: 0 $padding-standard;
+        box-sizing: border-box;
+        border-bottom: #{$border-line};
+        line-height: $bar-height;
+        @include clear-bottom;
+
+        & .label {
+          float: left;
+          display: block;
+          width: 60px;
+        }
+
+        & .value {
+          float: right;
+          display: block;
+          width: calc(100% - 60px);
+        }
+
+        & a {
+          display: inline-block;
+          text-decoration: none;
+          color: $blue-color;
+          
+          & i.material-icons {
+            font-size: 1em;
+            vertical-align: text-top;
+          }
+        }
+      }
+    }
+  }
+
+  & .song-player { 
+    & #audioPlayer {
+      display: none;
+    }
+    
+    & .song-control { 
+      position: relative;
+      height: $controlsHeight;
+      border-radius: 0.5em;
+
+      &.no-sound {
+        &:after { 
+          position: absolute;
+          @include fit-full-screen;
+          content: '';
+        }
+
+        & .pie-wrapper {
+          & .pie-center {
+            & .pie-arrow {
+              & i.material-icons {
+                color: $light-shade;
+              }
+            }
+          }
+        }
+
+        & .track-nav {
+          & i.material-icons {
+            color: $light-shade;
+          }
+        }
+      }
+      
+      & .track-nav {
+        position: absolute;
+        top: 0;
+        right: 2em;
+        width: 70px;
+        height: $controlsHeight;
+        text-align: center;
+        line-height: $controlsHeight;
+        white-space: nowrap;
+        @include centered-icon;
+
+        & i.material-icons {
+          font-size: $arrowHeight;
+          color: $white-color;
+        }
+        
+        &.disabled {
+          cursor: default;
+  
+          & i.material-icons {
+            color: $light-shade;
+          }
+        }
+        
+        &#previousSong {
+          left: 2em;
+          right: auto;
+        }
+      }
+
+      & .pie-wrapper {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: calc(50% - (#{$controlsHeight} / 2));
+        height: $controlsHeight;
+        width: $controlsHeight;
+        border-radius: 50%;
+        background: $light-shade;
+        cursor: pointer;
+        
+        & .pie-center {
+          display: block;
+          position: absolute;
+          top: $trackBarThickness;
+          bottom: $trackBarThickness;
+          left: $trackBarThickness;
+          right: $trackBarThickness;
+          border-radius: 50%;
+          text-align: center;
+          background: $black-color;
+          text-align: center;
+          @include centered-aligned-container;
+          
+          & .pie-arrow {
+            height: $arrowHeight;
+            width: $arrowHeight;
+            @include centered-aligned-content;
+
+            & i.material-icons {
+              font-size: $arrowHeight;
+              color: $blue-color;
+              
+              &.pause {
+                display: none;
+              }
+            }
+          }
+        }
+        
+        &.playing {
+          & .pie-center {
+            & .pie-arrow {
+              & i.material-icons {
+                &.play {
+                  display: none;
+                }
+                &.pause {
+                  display: inline-block;
+                }
+              }
+            }
+          }
+        }
+        
+        & .pie {
+          position: absolute;
+          @include fit-full-screen;
+          clip: rect(0, $controlsHeight, $controlsHeight, ($controlsHeight / 2));
+          
+          & .half-circle {
+            position: absolute;
+            @include fit-full-screen;
+            border: #{$trackBarThickness} solid $orange-color;
+            border-radius: 50%;
+            box-sizing: border-box;
+            clip: rect(0, ($controlsHeight / 2), $controlsHeight, 0);
+  
+            &.right-side {
+              display: none;   
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  & .button {
+    margin-top: 3em;
+  }
+}

@@ -1,0 +1,23 @@
+<div class="playlist">
+  <div class="title">
+    <div class="icon">
+      <i class="material-icons">queue_music</i>
+    </div>
+    <h2>Song List</h2>
+  </div>
+  <div #songList class="song-list">
+    <ol>
+      <li *ngFor="let song of songListArr; let i = index">
+        <a class="song-link" 
+          [href]="'#' + (i+1)" 
+          [attr.data-track]="song['track-file']"
+          (click)="selectSong($event)"
+        >{{song.title}}</a>
+        <span class="song-artist"><span><i class="material-icons">mic</i>{{song.artist}}</span></span>
+        <span class="song-duration">
+            {{song.duration | timeConverter}}
+        </span>
+      </li>
+    </ol>
+  </div>
+</div>
