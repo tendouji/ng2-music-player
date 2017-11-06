@@ -52,7 +52,11 @@ export class SongListComponent implements OnInit {
 
   getDuration(src, cb) {
     var audio = new Audio();
-    audio.addEventListener('loadedmetadata', () => cb(audio.duration));
+    if(audio.readyState >= 2) {
+      cb(audio.duration);
+    } else {
+      audio.addEventListener('loadedmetadata', () => cb(audio.duration));
+    }
     audio.src = src;
   }
   
